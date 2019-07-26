@@ -25,6 +25,7 @@
     "**/.*",
     "img",
     "js",
+    "src",
     "*.md",
     "gulpfile.js",
     "package.json"
