@@ -1,6 +1,6 @@
 {
   "name": "selectric",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "main": "public/jquery.selectric.js",
   "title": "jQuery Selectric",
   "author": {
@@ -28,6 +28,7 @@
     "url": "https://github.com/lcdsantos/jQuery-Selectric.git"
   },
   "dependencies": {
+    "gulp-cli": "^2.3.0",
     "jquery": "^3.1.1"
   },
   "devDependencies": {

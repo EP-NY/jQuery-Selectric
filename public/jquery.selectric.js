@@ -9,9 +9,9 @@
  *    /,'
  *   /'
  *
- * Selectric ϟ v1.15.0 (Jul 26 2019) - http://lcdsantos.github.io/jQuery-Selectric/
+ * Selectric ϟ v1.15.0 (Sep 16 2021) - http://lcdsantos.github.io/jQuery-Selectric/
  *
- * Copyright (c) 2019 Leonardo Santos; MIT License
+ * Copyright (c) 2021 Leonardo Santos; MIT License
  *
  */
 
@@ -271,7 +271,7 @@
       }
       
       // Create elements
-      var input              = $('<input/>', { 'class': _this.classes.input, 'readonly': _this.utils.isMobile() });
+      var input              = $('<input/>', { 'class': _this.classes.input, 'readonly': _this.utils.isMobile(), 'type':'hidden' });
       var items              = $('<div/>',   { 'class': _this.classes.items, 'tabindex': -1 });
       var itemsScroll        = $('<div/>',   { 'class': _this.classes.scroll });
       var wrapper            = $('<div/>',   { 'class': _this.classes.prefix, 'html': _this.options.arrowButtonMarkup });

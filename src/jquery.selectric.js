@@ -175,7 +175,7 @@
 
       /**
        *  Returns new unique id with 'sel-' prefix to use with aria-owns relationships
-       *  @return {string} The new unique id generated 
+       *  @return {string} The new unique id generated
        */
       
       randomId: function() {
@@ -254,7 +254,7 @@
       }
       
       // Create elements
-      var input              = $('<input/>', { 'class': _this.classes.input, 'readonly': _this.utils.isMobile() });
+      var input              = $('<input/>', { 'class': _this.classes.input, 'readonly': _this.utils.isMobile(), 'type':'hidden' });
       var items              = $('<div/>',   { 'class': _this.classes.items, 'tabindex': -1 });
       var itemsScroll        = $('<div/>',   { 'class': _this.classes.scroll });
       var wrapper            = $('<div/>',   { 'class': _this.classes.prefix, 'html': _this.options.arrowButtonMarkup });
