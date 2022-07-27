@@ -9,7 +9,7 @@
  *    /,'
  *   /'
  *
- * Selectric ϟ v1.17.0 (Jul 26 2022) - http://lcdsantos.github.io/jQuery-Selectric/
+ * Selectric ϟ v1.18.0 (Jul 26 2022) - http://lcdsantos.github.io/jQuery-Selectric/
  *
  * Copyright (c) 2021 Leonardo Santos; MIT License
  *
@@ -275,7 +275,7 @@
       var items              = $('<div/>',   { 'class': _this.classes.items, 'tabindex': -1 });
       var itemsScroll        = $('<div/>',   { 'class': _this.classes.scroll });
       var wrapper            = $('<div/>',   { 'class': _this.classes.prefix, 'html': _this.options.arrowButtonMarkup });
-      var label              = $('<span/>',  { 'class': 'label', 'role' : 'textbox', 'aria-autocomplete' : 'list', 'id' : _this.random_prefix + '-textbox' });
+      var label              = $('<span/>',  { 'class': 'label', 'role' : 'button', 'aria-autocomplete' : 'list', 'id' : _this.random_prefix + '-textbox' });
       var wrapper_attributes = { 'role' : 'combobox', 'id' : _this.random_prefix,
           'aria-haspopup' : 'listbox', 'aria-owns' : _this.random_prefix + '-listbox', 'aria-expanded' : 'false' };
       if ( original_label_id ) {
