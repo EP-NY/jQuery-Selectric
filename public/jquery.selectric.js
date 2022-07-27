@@ -9,7 +9,7 @@
  *    /,'
  *   /'
  *
- * Selectric ϟ v1.15.0 (Sep 16 2021) - http://lcdsantos.github.io/jQuery-Selectric/
+ * Selectric ϟ v1.17.0 (Jul 26 2022) - http://lcdsantos.github.io/jQuery-Selectric/
  *
  * Copyright (c) 2021 Leonardo Santos; MIT License
  *
@@ -192,15 +192,15 @@
 
       /**
        *  Returns new unique id with 'sel-' prefix to use with aria-owns relationships
-       *  @return {string} The new unique id generated 
+       *  @return {string} The new unique id generated
        */
       
       randomId: function() {
-    	  var new_id = false;
-    	  while ( !new_id || null != document.getElementById( new_id ) ) {
-    		  new_id = 'sel-' + (0|Math.random()*9e6).toString(36);
-    	  }
-    	  return new_id;
+        var new_id = false;
+        while ( !new_id || null != document.getElementById( new_id ) ) {
+          new_id = 'sel-' + (0|Math.random()*9e6).toString(36);
+        }
+        return new_id;
       },
       
       /**
@@ -261,13 +261,13 @@
       // find label if it exists
       var original_label_id = false;
       if ( _this.$element.attr( 'id' ) ) {
-	      var $original_label = $( 'label[for="' + _this.$element.attr( 'id' ) + '"]' );
-	      if( 0 < $original_label.length ) { // if a label exists, let's use it for aria-labelledby
-	    	  if ( !$original_label.attr( 'id' ) ) { // if it doesn't have an id, we need to give it one
-	    		  $original_label.attr( 'id', _this.random_prefix + "-labelledby" );
-	    	  }
-	    	  original_label_id = $original_label.attr( 'id' ); 
-	      }
+        var $original_label = $( 'label[for="' + _this.$element.attr( 'id' ) + '"]' );
+        if( 0 < $original_label.length ) { // if a label exists, let's use it for aria-labelledby
+          if ( !$original_label.attr( 'id' ) ) { // if it doesn't have an id, we need to give it one
+            $original_label.attr( 'id', _this.random_prefix + "-labelledby" );
+          }
+          original_label_id = $original_label.attr( 'id' ); 
+        }
       }
       
       // Create elements
@@ -277,12 +277,12 @@
       var wrapper            = $('<div/>',   { 'class': _this.classes.prefix, 'html': _this.options.arrowButtonMarkup });
       var label              = $('<span/>',  { 'class': 'label', 'role' : 'textbox', 'aria-autocomplete' : 'list', 'id' : _this.random_prefix + '-textbox' });
       var wrapper_attributes = { 'role' : 'combobox', 'id' : _this.random_prefix,
-    		  'aria-haspopup' : 'listbox', 'aria-owns' : _this.random_prefix + '-listbox' };
+          'aria-haspopup' : 'listbox', 'aria-owns' : _this.random_prefix + '-listbox', 'aria-expanded' : 'false' };
       if ( original_label_id ) {
-    	  wrapper_attributes[ 'aria-labelledby' ] = original_label_id;
+        wrapper_attributes[ 'aria-labelledby' ] = original_label_id;
       }
       var outerWrapper       = _this.$element.wrap( $( '<div/>', wrapper_attributes ) )
-      										.parent().append(wrapper.prepend(label), items, input);
+                          .parent().append(wrapper.prepend(label), items, input);
       var hideSelectWrapper  = $('<div/>',   { 'class': _this.classes.hideselect });
 
       _this.elements = {
@@ -540,11 +540,11 @@
 //      var options_id_list = '';
 //      var number_of_options = _this.$element.find('option').length;
 //      for( var i=0; i < number_of_options; i++ ) {
-//    	  options_id_list += _this.random_prefix + '-' + i + ' ';
+//        options_id_list += _this.random_prefix + '-' + i + ' ';
 //      }
 
       var markup = '<ul role="listbox" id="' + _this.random_prefix + '-listbox" ' + 
-      				'aria-controls="' + _this.random_prefix + '-textbox' + '">'; // aria-controls="' + options_id_list.trim() + '">';
+              'aria-controls="' + _this.random_prefix + '-textbox' + '">'; // aria-controls="' + options_id_list.trim() + '">';
      
       if ( $.isFunction(_this.options.listBuilder) && _this.options.listBuilder ) {
         items = _this.options.listBuilder(items);
