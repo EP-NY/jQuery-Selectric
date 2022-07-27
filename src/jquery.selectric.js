@@ -258,7 +258,7 @@
       var items              = $('<div/>',   { 'class': _this.classes.items, 'tabindex': -1 });
       var itemsScroll        = $('<div/>',   { 'class': _this.classes.scroll });
       var wrapper            = $('<div/>',   { 'class': _this.classes.prefix, 'html': _this.options.arrowButtonMarkup });
-      var label              = $('<span/>',  { 'class': 'label', 'role' : 'button', 'aria-autocomplete' : 'list', 'id' : _this.random_prefix + '-textbox' });
+      var label              = $('<span/>',  { 'class': 'label', 'role' : 'button', 'id' : _this.random_prefix + '-textbox' });
       var wrapper_attributes = { 'role' : 'combobox', 'id' : _this.random_prefix,
     		  'aria-haspopup' : 'listbox', 'aria-owns' : _this.random_prefix + '-listbox', 'aria-expanded' : 'false' };
       if ( original_label_id ) {
